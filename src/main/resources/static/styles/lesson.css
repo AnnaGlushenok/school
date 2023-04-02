@@ -1,0 +1,40 @@
+.main {
+  margin: 0px auto;
+  width: min(1170px, 100vw);
+}
+
+@media screen and (max-width: 1170px) {
+  .main__content {
+    padding: 1rem;
+  }
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+.text__title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #002B2B;
+  align-self: center;
+}
+.text__text {
+  margin: 7px;
+  text-align: justify;
+}
+.text__fact {
+  border-bottom: #00514C solid 2px;
+  border-top: #00514C solid 2px;
+  color: #00514C;
+  padding: 10px 0 10px 36px;
+  text-align: justify;
+}
+.text__formula {
+  text-align: center;
+}
+.text img {
+  align-self: center;
+}
+
+/*# sourceMappingURL=lesson.css.map */
