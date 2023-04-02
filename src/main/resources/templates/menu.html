@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/styles/normalize.css}">
+    <link rel="stylesheet" th:href="@{/styles/nav.css}">
+    <link rel="stylesheet" th:href="@{/styles/menu.css}">
+</head>
+<body>
+<nav th:insert="student_nav::student_nav"></nav>
+<main class="main">
+    <div class="main__blocks blocks">
+        <a class="block" target="_blank" th:href="lessons">
+            <p class="block__caption">Уроки</p>
+            <img src="/images/lessons_logo.svg" alt="tasks" class="block__img">
+        </a>
+        <a class="block" target="_blank" th:href="task">
+            <p class="block__caption">Задания</p>
+            <img src="/images/task_logo.svg" alt="biology" class="block__img">
+        </a>
+        <a class="block" target="_blank" th:href="practical">
+            <p class="block__caption">Практические</p>
+            <img src="/images/practical_logo.svg" alt="practical" class="block__img">
+        </a>
+        <a class="block" target="_blank" th:href="control">
+            <p class="block__caption">Контрольные</p>
+            <img src="/images/biology_logo.svg" alt="biology" class="block__img">
+        </a>
+    </div>
+</main>
+</body>
+</html>
