@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>нав</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+          integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="nav.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar__wrapper">
+        <div class="navbar__items">
+            <div class="navbar__item dropdown">
+                <a target="_blank" href="#" class="dropdown__title">Химия</a>
+                <div class="dropdown__list dropdown--hidden">
+                    <div class="dropdown__item"><a href="#">7</a></div>
+                    <div class="dropdown__item"><a href="#">8</a></div>
+                    <div class="dropdown__item"><a href="#">9</a>
+                        <div class="dropdown__subitem dropdown--hidden">
+                            <div class="dropdown__item"><a href="#">1</a></div>
+                            <div class="dropdown__item"><a href="#">2</a></div>
+                            <div class="dropdown__item"><a href="#">3</a></div>
+                        </div>
+                    </div>
+                    <div class="dropdown__item"><a href="#">10</a></div>
+                    <div class="dropdown__item"><a href="#">11</a></div>
+                </div>
+            </div>
+        </div>
+        <button class="navbar__enterBtn">Войти</button>
+    </div>
+</nav>
+<script src="./nav.js" defer></script>
+</body>
+</html>
