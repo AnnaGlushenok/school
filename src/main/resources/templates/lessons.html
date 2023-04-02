@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Уроки</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/styles/normalize.css}">
+    <link rel="stylesheet" th:href="@{/styles/nav.css}">
+    <link rel="stylesheet" th:href="@{/styles/lessons.css}">
+    <script th:src="@{/scripts/openBar.js}" defer></script>
+</head>
+<body>
+<nav th:insert="student_nav::student_nav"></nav>
+<main class="main">
+    <div class="main__container container">
+        <div class="container__title title">
+            <img class="title__arrow" src="/images/arrow.png" alt="arrow">
+            <p class="title__title">Первоначальные химические понятия и теоретические представления</p>
+        </div>
+        <div class="container__block links">
+            <div class="links"><a href="" class="links__link">Предмет химии</a></div>
+            <div class="links"><a href="" class="links__link">Физические тела и вещества</a></div>
+            <div class="links"><a href="" class="links__link">Чистые вещества и их смеси</a></div>
+            <div class="links"><a href="" class="links__link">Разделение смесей. Методы очистки веществ</a></div>
+            <div class="links"><a href="" class="links__link">Атомы и молекулы</a></div>
+            <div class="links"><a href="" class="links__link">Химические элементы. Знаки химических элементов</a></div>
+            <div class="links"><a href="" class="links__link">Закон постоянства состава</a></div>
+            <div class="links"><a href="" class="links__link">Химические формулы</a></div>
+            <div class="links"><a href="" class="links__link">Отличия простых и сложных веществ</a></div>
+            <div class="links"><a href="" class="links__link">Валентность. Степень окисления. Составление формул по
+                валентностям и степеням окисления</a></div>
+            <div class="links"><a href="" class="links__link">Физические и химические явления</a></div>
+            <div class="links"><a href="" class="links__link">Признаки и условия протекания химических реакций</a></div>
+            <div class="container__button">
+                <button class="container__button button">Пройти тест</button>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
