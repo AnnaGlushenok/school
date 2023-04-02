@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Контольные работы</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/styles/normalize.css}">
+    <link rel="stylesheet" th:href="@{/styles/nav.css}">
+    <link rel="stylesheet" th:href="@{/styles/control.css}">
+    <script th:src="@{/scripts/openBar.js}" defer></script>
+</head>
+<body>
+<nav th:insert="student_nav::student_nav"></nav>
+<main class="main">
+    <div class="main__container container">
+        <div class="container__title title">
+            <img class="title__arrow" src="/images/arrow.png" alt="arrow">
+            <p class="title__title">Окислительно-восстановительные реакции</p>
+        </div>
+
+        <div class="container__block">
+            <div class="container__caption caption">
+                <p class="caption__caption">Я не знаю:</p>
+            </div>
+
+            <div class="container__items item">
+                <label for="checkbox1" class="item__item item">
+                    <input type="checkbox" id="checkbox1" class="item__hidden_checkbox" hidden>
+                    <div class="item__check_box"></div>
+                    <p class="item__text">Физические тела и вещества</p>
+                </label>
+                <label for="checkbox2" class="item__item item">
+                    <input type="checkbox" id="checkbox2" class="item__hidden_checkbox" hidden>
+                    <div class="item__check_box"></div>
+                    <p class="item__text">Чистые вещества и их смеси</p>
+                </label>
+                <label for="checkbox3" class="item__item item">
+                    <input type="checkbox" id="checkbox3" class="item__hidden_checkbox" hidden>
+                    <div class="item__check_box"></div>
+                    <p class="item__text">Разделение смесей. Методы очистки веществ</p>
+                </label>
+            </div>
+
+            <div class="container__button">
+                <button class="container__button button">Повторить</button>
+            </div>
+
+            <div class="container__example">
+                <div class="container__caption caption">
+                    <p class="caption__caption">Пример решения варианта контрольной:</p>
+                </div>
+                <div class="container__tasks task">
+                    <p>Укажите формулу органического вещества:<br>
+                        а) Na<sub>2</sub>CO<sub>3</sub>;<br>
+                        б) NH<sub>4</sub>Cl;<br>
+                        в) HNO<sub>3</sub>;<br>
+                        г) C<sub>6</sub>H<sub>6</sub>.<br>
+                        Органическое вещество определяется наличием углерода (С), значит вариант г.<br></p>
+                    <p> 2. Укажите молекулярную формулу ароматического углеводорода:<br>
+                        а) C<sub>6</sub>H<sub>6</sub>;<br>
+                        б) C<sub>2</sub>H<sub>2</sub>;<br>
+                        в) C<sub>2</sub>H<sub>4</sub>;<br>
+                        г) C<sub>3</sub>H<sub>6</sub>.<br>
+                        Молярная масса ищется по формуле .... , и какой-то ароматический углерод<br></p>
+                    <p> 3. Этанол и уксусную (этановую) кислоту можно качественно различить при помощи реактива:<br>
+                        а) NaCl;<br>
+                        б) NaHCO<sub>3</sub>;<br>
+                        в) K<sub>2</sub>SO<sub>4</sub>;<br>
+                        г) CuSO<sub>4</sub>.<br></p>
+                    <p> 4. Массовая доля водорода в молекуле увеличивается в ряду соединений:<br>
+                        а) пропан, пропен, пропин;<br>
+                        б) пропен, пропан, пропин;<br>
+                        в) пропин, пропен, пропан;<br>
+                        г) пропин, пропан, пропен.<br>
+                        Помню только формулу спирта<br></p>
+                    <p> 5. Укажите пару, в которой приведены названия веществ, принадлежащих одному гомологическому
+                        ряду:<br>
+                        а) метановая кислота и метанол;<br>
+                        б) бутан и пропен;<br>
+                        в) этанол и этан;<br>
+                        г) бутен и пропен.<br></p>
+                    <p> 6. Укажите название органического вещества, которое образуется при гидрировании этина:<br>
+                        а) пропен;<br>
+                        в) этан;<br>
+                        б) бутан;<br>
+                        г) пропан.<br></p>
+                    <p> 7. Укажите объем (дм3, н. у.) водорода, который выделится при взаимодействии 19,2 г метанола с
+                        избытком натрия:<br>
+                        а) 6,72;<br>
+                        б) 10,08;<br>
+                        в) 13,44;<br>
+                        г) 22,4.<br></p>
+                    <p> 8. Укажите формулу углевода:<br>
+                        а) C<sub>4</sub>H<sub>10</sub>;<br>
+                        б) C<sub>6</sub>H<sub>6</sub>;<br>
+                        в) (C<sub>6</sub>H<sub>10</sub>O<sub>5</sub>)<sub>n</sub>;<br>
+                        г) C<sub>3</sub>H<sub>8</sub>.<br></p>
+                    <p>9. Укажите пару, в которой приведены название вещества и структурная формула его изомера.
+                        Название вещества </p>
+                    <div class="task__table table_container">
+                        <table class="table_container__table table">
+                            <tr class="table__row">
+                                <td class="table__cell">а) 2-метилпропен</td>
+                                <td class="table__cell">CH<sub>3</sub> — CH = CH — CH<sub>3</sub></td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell">б) Этен</td>
+                                <td class="table__cell">CH ≡ CH</td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell">в) Бутен-1</td>
+                                <td class="table__cell">CH<sub>3</sub> — CH = CH<sub>2</sub></td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell">г) 2-метилпропан</td>
+                                <td class="table__cell"><img src="/images/CH3_CH3—CH2.svg" alt="CH3_CH3—CH2"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p>
+                        10. Для нейтрализации хлороводорода, образовавшегося в результате хлорирования метана объемом
+                        2,24 дм<sup>3</sup> (н. у.), потребовался NaOH химическим количеством 0,1 моль. Укажите, какое
+                        количество
+                        атомов водорода в молекуле метана заместилось на галоген:<br>
+                    </p>
+                    <img src="/images/exercise.svg" alt="exercise">
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

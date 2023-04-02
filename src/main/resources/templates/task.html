@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Задания</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/styles/normalize.css}">
+    <link rel="stylesheet" th:href="@{/styles/nav.css}">
+    <link rel="stylesheet" th:href="@{/styles/task.css}">
+    <script th:src="@{/scripts/openBar.js}" defer></script>
+</head>
+<body>
+<nav th:insert="student_nav::student_nav"></nav>
+<main class="main">
+    <div class="main__container container">
+        <div class="container__title title">
+            <img class="title__arrow" src="/images/arrow.png" alt="arrow">
+            <p class="title__title">Окислительно-восстановительные реакции</p>
+        </div>
+        <div class="container__block">
+            <p class="container__text">1. Какие соединения и простые вещества могут проявлять только окислительные
+                свойства. Выберите такие вещества из предложенного перечня: NH<sub>3</sub>, CO, SO<sub>2</sub>,
+                K<sub>2</sub>MnO<sub>4</sub>, Сl<sub>2</sub>, HNO<sub>2</sub>. Составьте
+                уравнение электронного баланса, расставьте коэффициенты в уравнении реакции:
+                HNO<sub>3</sub> + H<sub>2</sub>S = H<sub>2</sub>SO<sub>4</sub> + NO + H<sub>2</sub>O.</p>
+            <p class="container__text">2. Почему азотистая кислота может проявлять как окислительные, так и
+                восстановительные свойства? Составьте уравнения реакций HNO2: а) с бромной водой; б) с HI; в) с
+                KMnO<sub>4</sub>.
+                Какую функцию выполняет азотистая кислота в этих реакциях?</p>
+            <p class="container__text">3. Определите методом электронного баланса коэффициенты в уравнениях
+                окислительно-восстановительных реакций:<br>
+                Zn + HNO<sub>3</sub> = Zn(NO<sub>3</sub>)<sub>2</sub> + NH<sub>4</sub>NO<sub>3</sub> +
+                H<sub>2</sub>O<br>
+                Zn + H<sub>2</sub>SO<sub>4</sub>(конц) = ZnSO<sub>4</sub> + SO<sub>2</sub> + H<sub>2</sub>O</p>
+        </div>
+    </div>
+</main>
+</body>
+</html>

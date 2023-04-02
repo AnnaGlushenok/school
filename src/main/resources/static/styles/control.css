@@ -1,0 +1,122 @@
+.main {
+  margin: 0 auto;
+  width: min(1170px, 100vw);
+  padding: 50px 10px;
+}
+
+.container__block {
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.container__caption {
+  display: flex;
+  justify-content: center;
+}
+.container__items {
+  display: flex;
+  flex-direction: column;
+}
+.container__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0 30px;
+}
+
+.button {
+  width: 220px;
+  height: 60px;
+  background: white;
+  border-radius: 50px;
+  border: none;
+  color: #52001D;
+  font-size: 20px;
+  box-shadow: 0 10px 20px rgba(82, 0, 29, 0.2);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #31DE70;
+  color: white;
+  box-shadow: 0 10px 20px rgba(49, 222, 112, 0.7);
+  transform: translateY(-10px);
+  transition: 0.3s;
+}
+
+.table_container {
+  display: flex;
+  justify-content: center;
+}
+
+.table {
+  width: 570px;
+  height: 292px;
+  border-collapse: collapse;
+  border: 1px solid #000000;
+}
+.table__row, .table__cell {
+  border: 1px solid grey;
+  text-align: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  cursor: default;
+  align-items: center;
+}
+.title__arrow {
+  width: 30px;
+  height: 30px;
+  rotate: 0;
+  transition: 0.5s;
+}
+.title__title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #002B2B;
+}
+.title__active img {
+  transition: 0.5s;
+  rotate: 90deg;
+}
+
+.item__check_box {
+  background: url("../../images/cross.svg") center center;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  border: 1px #52001D solid;
+}
+.item__text {
+  margin: 0;
+  font-size: 20px;
+  color: #52001D;
+  user-select: none;
+}
+.item__hidden_checkbox:checked + .item__check_box {
+  background: url("../../images/done_arrow.svg") center center;
+  border: 1px #00A110 solid;
+}
+.item__hidden_checkbox:checked + .item__check_box + .item__text {
+  color: #00A110;
+}
+.item__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.caption__caption {
+  font-size: 24px;
+  color: #002B2B;
+  font-weight: bold;
+  margin: 0;
+}
+
+/*# sourceMappingURL=control.css.map */

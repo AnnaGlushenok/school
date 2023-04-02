@@ -1,0 +1,38 @@
+.main {
+  margin: 0 auto;
+  width: min(1170px, 100vw);
+  padding: 50px 10px;
+}
+
+.container__block {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  cursor: default;
+  align-items: center;
+}
+.title__arrow {
+  width: 30px;
+  height: 30px;
+  rotate: 0;
+  transition: 0.5s;
+}
+.title__title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #002B2B;
+}
+.title__active img {
+  transition: 0.5s;
+  rotate: 90deg;
+}
+
+/*# sourceMappingURL=task.css.map */
