@@ -1,44 +1,53 @@
 .navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  height: 60px;
-  background: #00514C;
-  padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 60px;
+    background: #00514C;
+    padding: 0 1rem;
 }
+
 .navbar * {
-  color: white;
+    color: white;
 }
+
 .navbar__wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  width: min(1170px, 100vw);
-  align-items: center;
-  gap: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    width: min(1170px, 100vw);
+    align-items: center;
+    gap: 25px;
 }
+
 .navbar__enterBtn {
-  width: 100px;
-  height: 30px;
-  border: 1px solid #FFFFFF;
-  background: transparent;
-  font-size: 14px;
-  cursor: pointer;
+    display: block;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #FFFFFF;
+    background: transparent;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
 }
+
 .navbar__enterBtn:hover {
-  background: white;
-  color: #00514C;
+    background: white;
+    color: #00514C;
 }
 
 .items {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
 }
+
 .items__item > a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 /*# sourceMappingURL=nav.css.map */

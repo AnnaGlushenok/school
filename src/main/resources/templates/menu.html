@@ -14,19 +14,22 @@
 <nav th:insert="student_nav::student_nav"></nav>
 <main class="main">
     <div class="main__blocks blocks">
-        <a class="block" target="_blank" th:href="lessons">
+        <a class="block" target="_blank"
+           th:href="'lessons?subject_id='+${subject_id}+'&class_id='+${subject_id}">
             <p class="block__caption">Уроки</p>
             <img src="/images/lessons_logo.svg" alt="tasks" class="block__img">
         </a>
-        <a class="block" target="_blank" th:href="task">
+        <a class="block" target="_blank" th:href="'task?subject_id='+${subject_id}+'&class_id='+${subject_id}">
             <p class="block__caption">Задания</p>
             <img src="/images/task_logo.svg" alt="biology" class="block__img">
         </a>
-        <a class="block" target="_blank" th:href="practical">
+        <a class="block" target="_blank"
+           th:href="'practical?subject_id='+${subject_id}+'&class_id='+${subject_id}">
             <p class="block__caption">Практические</p>
             <img src="/images/practical_logo.svg" alt="practical" class="block__img">
         </a>
-        <a class="block" target="_blank" th:href="control">
+        <a class="block" target="_blank"
+           th:href="'control?subject_id='+${subject_id}+'&class_id='+${subject_id}">
             <p class="block__caption">Контрольные</p>
             <img src="/images/biology_logo.svg" alt="biology" class="block__img">
         </a>

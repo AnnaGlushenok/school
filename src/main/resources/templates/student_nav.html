@@ -1,10 +1,11 @@
 <nav class="navbar" th:fragment="student_nav">
     <div class="navbar__wrapper">
         <div class="navbar__items items">
-            <div class="items__item"><a target="_blank" th:href="'/main'">Главная</a></div>
+            <div class="items__item"><a target="_blank" th:href="'/'">Главная</a></div>
             <div class="items__item"><a target="_blank" th:href="'/main'">Задать вопрос</a></div>
             <div class="items__item"><a target="_blank" th:href="'/main'">Об авторе</a></div>
         </div>
-        <button class="navbar__enterBtn">Войти</button>
+        <a class="navbar__enterBtn" th:href="'/auth'">Войти</a>
+        <a class="navbar__enterBtn" th:href="'/registration'">Регистрация</a>
     </div>
 </nav>
