@@ -850,20 +850,35 @@
 											"top": 297,
 											"width": 145.4462890625,
 											"height": 18
+										},
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAGHQn5XRmRs5RQ=",
+											"_parent": {
+												"$ref": "AAAAAAGG5ow/e5BsVhc="
+											},
+											"model": {
+												"$ref": "AAAAAAGHQn5XPWRp8kg="
+											},
+											"font": "Arial;18;0",
+											"left": 389,
+											"top": 317,
+											"width": 145.4462890625,
+											"height": 18
 										}
 									],
 									"font": "Arial;18;0",
 									"left": 384,
 									"top": 252,
 									"width": 155.4462890625,
-									"height": 68
+									"height": 88
 								}
 							],
 							"font": "Arial;18;0",
 							"left": 384,
 							"top": 224,
 							"width": 155.4462890625,
-							"height": 96,
+							"height": 116,
 							"nameLabel": {
 								"$ref": "AAAAAAGG5ow/e5Br3Zs="
 							},
@@ -2123,6 +2138,15 @@
 								"$ref": "AAAAAAGG5ow/e5Boc6Y="
 							},
 							"name": "путь к лого",
+							"length": 0
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAGHQn5XPWRp8kg=",
+							"_parent": {
+								"$ref": "AAAAAAGG5ow/e5Boc6Y="
+							},
+							"name": "alt",
 							"length": 0
 						}
 					]
