@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="stylesheet" th:href="@{/styles/normalize.css}">
+    <link rel="stylesheet" th:href="@{/styles/nav.css}">
+    <link rel="stylesheet" th:href="@{/styles/registration.css}">
+    <script th:src="@{/scripts/registration.js}"></script>
+</head>
+<body>
+<nav th:insert="student_nav::student_nav"></nav>
+<main class="main">
+    <div class="main__block block">
+        <form class="block__form form" th:action="@{/registration}" method="post">
+            <input class="form__input" type="text" required pattern="[А-Яа-я]+" placeholder="Фамилия">
+            <input class="form__input" type="text" required pattern="[А-Яа-я]+" placeholder="Имя">
+            <input class="form__input" type="text" required pattern="[А-Яа-я]+" placeholder="Отчество">
+            <input class="form__input" type="text" required pattern="^([1-9]|1[0-1])$" placeholder="Номер класса">
+            <input class="form__input" type="email" required placeholder="email">
+            <input class="form__input" type="text" required pattern="[A-Za-z(\d+)?]{4,}"
+                   placeholder="Логин (не менее 4 латинских символов)">
+            <input class="form__input" type="password" required pattern="[A-Za-z(\d+!@#$%^&*:;)?]{6,}"
+                   placeholder="Пароль (не менее 6 латинских символов)">
+            <div class="form__buttons buttons">
+                <button class="buttons__button" onclick="registration()">Зарегистрироваться</button>
+            </div>
+        </form>
+    </div>
+</main>
+</body>
+</html>
