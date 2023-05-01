@@ -1,0 +1,102 @@
+.main {
+  margin: 0 auto;
+  width: min(1170px, 100vw);
+  padding: 50px 10px;
+}
+.main__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+.main__buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 270px);
+  grid-template-rows: 1fr 1fr;
+  gap: 30px;
+  padding-top: 50px;
+}
+.main__page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#dnd {
+  width: 100px;
+  height: 100px;
+  border: 1px dashed black;
+}
+
+#dnd[data-over=true] {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+img {
+  display: inline-block;
+  height: 100px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.title__title {
+  margin: 0;
+  font-size: 26px;
+  color: #002B2B;
+  white-space: nowrap;
+  white-space: pre;
+}
+.title__text {
+  width: 100%;
+  font-size: 20px;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.block {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+}
+.block__content {
+  width: min(1170px, 100vw);
+  resize: both;
+  min-height: 40px;
+  border: black solid 1px;
+  padding: 10px;
+}
+.block__delete_button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.block__img {
+  width: 30px;
+  height: 30px;
+}
+
+.button__button {
+  width: 270px;
+  height: 65px;
+  border: none;
+  border-radius: 50px;
+  background: #00514C;
+  color: white;
+  font-size: 26px;
+}
+.button .center {
+  grid-column: 1/5;
+  justify-self: center;
+}
+
+/*# sourceMappingURL=task.css.map */

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+    <link rel="stylesheet" th:href="@{/styles/normalize.css}">
+    <link rel="stylesheet" th:href="@{/styles/nav.css}">
+    <link rel="stylesheet" th:href="@{/styles/auth.css}">
+    <script th:src="@{/scripts/auth.js}" defer></script>
+</head>
+<body>
+<nav th:insert="student_nav::student_nav"></nav>
+<main class="main">
+    <div class="main__block block">
+        <form class="block__form form">
+            <input class="form__input" type="text" required pattern="[A-Za-z(\d+)?]{4,}" placeholder="Логин">
+            <input class="form__input" type="password" required pattern="[A-Za-z(\d+!@#$%^&*:;)?]{6,}"
+                   placeholder="Пароль">
+            <div class="form__buttons buttons">
+                <button class="buttons__button" onclick="auth()">Войти</button>
+            </div>
+        </form>
+    </div>
+</main>
+</body>
+</html>
