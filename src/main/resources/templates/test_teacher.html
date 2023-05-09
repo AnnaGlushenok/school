@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест</title>
+    <link rel="stylesheet" th:href="@{/styles/normalize.css}">
+    <link rel="stylesheet" th:href="@{/styles/nav_teacher.css}">
+    <link rel="stylesheet" th:href="@{/styles/test_teacher.css}">
+    <script th:src="@{/scripts/test_teacher.js}" defer></script>
+</head>
+<body>
+<nav th:insert="nav::teacher_nav"></nav>
+<main>
+    <div class="main__block block">
+        <button class="block__button" onclick="addCard()">Добавить</button>
+        <button class="block__button" onclick="save()">Сохранить</button>
+    </div>
+</main>
+</body>
+</html>

@@ -1,13 +1,13 @@
 package school.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import school.controller.TestResult;
+
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -47,4 +47,7 @@ public class Student {
 
     //   @Enumerated(EnumType.STRING)
     private String role;
+
+//    @OneToMany(mappedBy = "student")
+//    private Set<TestResult> test;
 }

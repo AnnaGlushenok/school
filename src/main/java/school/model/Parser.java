@@ -4,8 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import net.minidev.json.JSONObject;
-import org.apache.tomcat.util.json.JSONParser;
 
 import java.util.List;
 

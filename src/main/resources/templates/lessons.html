@@ -20,8 +20,8 @@
             <p class="title__title" th:text="${module.name}"></p>
         </div>
         <div class="container__block links">
-            <div class="links" th:each="lesson:${module.lessons}">
-                <a href="" class="links__link" th:text="${lesson.getTitle()}"></a>
+            <div class="links" th:each="lesson:${lessons}">
+                <a th:href="'lesson/'+${lesson.id}" class="links__link" th:text="${lesson.title}"></a>
             </div>
             <!--            <div class="links"><a href="" class="links__link">Предмет химии</a></div>-->
             <!--            <div class="links"><a href="" class="links__link">Физические тела и вещества</a></div>-->

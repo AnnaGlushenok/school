@@ -3,60 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Тест</title>
-    <link rel="stylesheet" href="../styles/normalize.css">
-    <link rel="stylesheet" href="../styles/nav.css">
-    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" th:href="@{/styles/normalize.css}">
+    <link rel="stylesheet" th:href="@{/styles/nav.css}">
+    <link rel="stylesheet" th:href="@{/styles/test.css}">
+    <script th:src="@{/scripts/test.js}" defer></script>
 </head>
 <body>
-<nav class="navbar">
-    <div class="navbar__wrapper">
-        <div class="navbar__items items">
-            <div class="items__item"><a target="_blank" href="../main/index.html">Главная</a></div>
-            <div class="items__item"><a target="_blank" href="#">Задать вопрос</a></div>
-            <div class="items__item"><a target="_blank" href="#">Об авторе</a></div>
-        </div>
-        <button class="navbar__enterBtn">Войти</button>
-    </div>
-</nav>
+<nav th:insert="student_nav::student_nav"></nav>
 <main class="main">
     <div class="main__block block">
-        <!-- <div class="block__card card">
-             <p class="card__question_number">3/15</p>
-             <p class="card__question_caption">В какой роли выступают металлы в ОВР?</p>
-             <div class="card__questions questions">
-                 <div class="card__question question">
-                     <input type="radio" name="answer" class="question__checkbox" id="question1">
-                     <label for="question1">Восстановителя</label>
-                 </div>
-                 <div class="card__question">
-                     <input type="radio" name="answer" class="question__checkbox" id="question2">
-                     <label for="question2">Окислителя</label>
-                 </div>
-                 <div class="card__question">
-                     <input type="radio" name="answer" class="question__checkbox" id="question3">
-                     <label for="question3">Восстановителя и окислителя</label>
-                 </div>
-                 <div class="card__question">
-                     <input type="radio" name="answer" class="question__checkbox" id="question4">
-                     <label for="question4">Не участвуют в ОВР</label>
-                 </div>
-             </div>
-             <button class="card__button">Далее</button>
-         </div>-->
         <div class="block__card card">
-            <p class="card__title">Тест</p>
-            <p class="card__question_caption">Окислительно-Восстановительные реакции</p>
-            <p class="card__title">Оценка</p>
-            <p class="card__mark">9</p>
-            <div class="card__datetime datetime">
-                <div class="datetime__left_block">
-                    <p class="datetime__text">Дата:<br>Время выполнения: </p>
-                </div>
-                <div class="datetime__right_block">
-                    <p class="datetime__text">11.03.2023<br>5:41</p>
-                </div>
-            </div>
-            <button class="card__button">Далее</button>
+            <p class="card__question_number"></p>
+            <p class="card__question_caption"></p>
+            <div class="card__questions questions"></div>
+            <button class="card__button" onclick="next()">Далее</button>
         </div>
     </div>
 </main>

@@ -99,7 +99,7 @@ async function save() {
             return response.text();
         }
     }).then(errorMessage => {
-        alert(errorMessage);
+        console.error(errorMessage);
     }).catch(error => {
         console.error(error);
     });

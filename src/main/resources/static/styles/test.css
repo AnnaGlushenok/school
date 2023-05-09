@@ -32,7 +32,7 @@
 .card__question_caption {
   font-size: 26px;
   font-weight: bold;
-  margin: 20px;
+  margin: 5px;
 }
 .card__questions {
   display: flex;
@@ -92,6 +92,7 @@
   width: 18px;
   border: none;
   accent-color: #00514C;
+  margin-right: 5px;
 }
 
 /*# sourceMappingURL=test.css.map */

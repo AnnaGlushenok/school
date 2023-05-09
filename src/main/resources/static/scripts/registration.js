@@ -29,7 +29,6 @@ async function registration() {
             return response.text();
         }
     }).then(errorMessage => {
-        alert(errorMessage);
         console.log(errorMessage);
     }).catch(error => {
         console.error(error);

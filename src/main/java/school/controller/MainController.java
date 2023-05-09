@@ -32,16 +32,6 @@ public class MainController {
         return "menu";
     }
 
-    @GetMapping("/lesson")
-    public String lesson(Model model) {
-        return "lesson";
-    }
-
-    @GetMapping("/task")
-    public String task(Model model) {
-        return "task";
-    }
-
     @GetMapping("/practical")
     public String practical(Model model) {
         return "practical";
@@ -61,5 +51,4 @@ public class MainController {
     public String registration(Model model) {
         return "registration";
     }
-
 }

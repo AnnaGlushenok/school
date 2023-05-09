@@ -2,18 +2,15 @@ package school.controller;
 
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import school.model.Roles;
 import school.model.Student;
 import school.model.interfaces.ClassRepository;
 import school.model.interfaces.StudentRepository;
-
-import java.io.IOException;
 
 @Controller
 public class AuthController {
