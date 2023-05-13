@@ -137,7 +137,7 @@ function next() {
     currentQuestion++;
     if (currentQuestion >= len) {
         clear();
-        showResult(8);
+        showResult();
         return;
     }
     clear();

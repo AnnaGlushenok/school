@@ -1,9 +1,6 @@
-function addDivBlock(id) {
-    let id1 = findLastQuestionId();
+function addDivBlock() {
     let div = document.createElement("div")
     div.setAttribute("class", "questions__question question");
-    div.setAttribute("id", id + "_" + (id1 + 1));
-
     return div;
 }
 
@@ -15,13 +12,13 @@ function addInput() {
     return input;
 }
 
-function addButton() {
+function addButton(question) {
     let button = document.createElement("button");
-    button.setAttribute("class", "question__add_btn");
-    button.setAttribute("onclick", "deleteAnswer()");
+    button.classList.add("question__add_btn");
+    button.addEventListener("click", () => question.remove());
 
     let img = document.createElement("img");
-    img.setAttribute("class", "questions__img");
+    img.classList.add("questions__img");
     img.setAttribute("src", "../../images/cross_teacher.svg");
     img.setAttribute("alt", "plus");
     button.appendChild(img);
@@ -29,77 +26,37 @@ function addButton() {
     return button;
 }
 
-function findLastQuestionId() {
-    let id = event.target.parentNode.parentNode.parentNode.id;
-    let card = document.getElementById(id);
-    let questions = card.getElementsByClassName("question");
-    let max = -1;
-    for (let i = 0; i < questions.length; i++) {
-        let d = questions[i].id.split("_")[1];
-        if (max < d)
-            max = d
-    }
-    return +max;
-}
-
-function findLastId(className) {
-    let el = document.querySelector(className);
-    if (!el)
-        return 0;
-    let children = el.childNodes;
-    let max = -1;
-    for (let i = 0; i < children.length; i++) {
-        if (max < children[i].id)
-            max = children[i].id
-    }
-    return +max;
-}
-
-function deleteAnswer() {
-    document.getElementById(event.target.parentNode.parentNode.id).remove();
-}
-
-function deleteCard() {
-    document.getElementById(event.target.parentNode.parentNode.id).remove();
-}
-
-function addQuestion() {
-    let id = event.target.parentNode.parentNode.parentNode.id;
-    let div = addDivBlock(id);
-    let input = addInput()
-    let button = addButton();
+function addQuestion(card) {
+    const div = addDivBlock();
+    const input = addInput();
+    const button = addButton(div);
 
     div.appendChild(input);
     div.appendChild(button);
 
-    let elem = document.getElementById(id).children[0].children;
-    let parent = elem[elem.length - 2];
-    let d = document.getElementById(id).children[0];
-    d.insertBefore(div, parent);
+    const plus = card.querySelector("div.card__questions.questions");
+    card.insertBefore(div, plus);
 }
 
 function addCard() {
     let wrap = document.createElement("div");
-    wrap.setAttribute("class", "block__wrap");
-    wrap.setAttribute("id", findLastId(".block") + 1);
+    wrap.classList.add("block__wrap");
 
     let deleteButton = document.createElement("button");
-    deleteButton.setAttribute("onclick", "deleteCard()");
+    deleteButton.addEventListener("click", () => wrap.remove());
     deleteButton.setAttribute("class", "questions__add_btn");
 
     let img = document.createElement("img");
     img.setAttribute("class", "questions__img");
     img.setAttribute("src", "../../images/cross_teacher.svg");
     img.setAttribute("alt", "cross");
-
     deleteButton.appendChild(img);
 
     let div = document.createElement("div");
-    div.setAttribute("class", "block__card card");
-    div.setAttribute("id", findLastId(".block") + 1);
+    div.classList.add("block__card", "card");
 
     let questionDiv = document.createElement("div");
-    questionDiv.setAttribute("class", "card__question_title question_title");
+    questionDiv.classList.add("card__question_title", "question_title");
 
     let input = document.createElement("input");
     input.setAttribute("type", "text");
@@ -124,7 +81,7 @@ function addCard() {
 
     let button = document.createElement("button");
     button.setAttribute("class", "questions__add_btn");
-    button.setAttribute("onclick", "addQuestion()");
+    button.addEventListener("click", () => addQuestion(div))
 
     img = document.createElement("img");
     img.setAttribute("class", "questions__img");
@@ -162,15 +119,15 @@ function save() {
         let select = card.children[0].children[1];
         let questionType = select.options[select.selectedIndex].text;
         let questions = card.children;
-        let questionsJSON = [];
+        let answersJSON = [];
         for (let j = 1; j < questions.length - 2; j++)
-            questionsJSON[j - 1] = questions[j].children[0].value;
+            answersJSON[j - 1] = questions[j].children[0].value;
 
         let answer = card.children[card.children.length - 1].value;
         let q = {
             "question": question,
             "questionType": questionType,
-            "questions": questionsJSON.join(","),
+            "answers": answersJSON.join(","),
             "answer": answer
         };
         questionJson.push(q);
