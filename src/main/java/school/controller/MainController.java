@@ -16,7 +16,7 @@ public class MainController {
     private ClassRepository classRepository;
     private int subject_id, class_id;
 
-    @GetMapping("/")
+    @GetMapping("/main")
     public String main(Model model) {
         model.addAttribute("subjects", subjectRepository.findAll());
         model.addAttribute("classes", classRepository.findAll());
@@ -32,6 +32,11 @@ public class MainController {
         return "menu";
     }
 
+    @GetMapping("/mainTeacher")
+    public String mainTeacher(Model model) {
+        return "main_teacher";
+    }
+
     @GetMapping("/practical")
     public String practical(Model model) {
         return "practical";
@@ -40,15 +45,5 @@ public class MainController {
     @GetMapping("/control")
     public String control(Model model) {
         return "control";
-    }
-
-    @GetMapping("/auth")
-    public String auth(Model model) {
-        return "auth";
-    }
-
-    @GetMapping("/registration")
-    public String registration(Model model) {
-        return "registration";
     }
 }

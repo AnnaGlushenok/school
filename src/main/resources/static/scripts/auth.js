@@ -1,19 +1,26 @@
-function auth() {
-    let inputs = document.querySelector(".form").children;
+async function auth() {
+    let inputs = document.getElementsByClassName("form__input");
     let json = {
-        login: inputs[0].innerHTML,
-        password: inputs[1].innerHTML
+        "login": inputs[0].value,
+        "password": inputs[1].value
     }
-    alert(json);
-    fetch('/auth', {
+    await fetch('/auth', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json;charset=UTF-8'
         },
         body: JSON.stringify(json)
-    }).then(function (response) {
-        console.log("Данные успешно отправлены на сервер");
-    }).catch(function (error) {
-        console.log("Ошибка при отправке данных на сервер");
-    });
+    })
+        .then(response => response.text())
+        .then(data => {
+            const json = JSON.parse(data);
+            if (json.role === "STUDENT") {
+                window.location.href = "/main";
+            } else {
+                window.location.href = "/mainTeacher";
+            }
+        })
+        .catch(function (error) {
+            console.log("Ошибка при отправке данных на сервер");
+        });
 }

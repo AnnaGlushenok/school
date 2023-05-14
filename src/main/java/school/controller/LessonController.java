@@ -23,10 +23,11 @@ public class LessonController {
     private ModuleRepository moduleRepository;
 
     @GetMapping("/lesson/{id}")
-    public String getLessonPage() {
+    public String getLesson() {
         return "lesson";
     }
 
+    //TODO объединить эти методы?
     @GetMapping("/getLesson/{id}")
     @ResponseBody
     public Lesson getLessonPage(@PathVariable("id") int id) {
@@ -54,7 +55,7 @@ public class LessonController {
     }
 
     @RequestMapping(value = "/lessonTeacher", method = RequestMethod.POST)
-    public ResponseEntity<String> registration(HttpServletResponse response, @RequestBody Parser parser) {
+    public ResponseEntity<String> save(HttpServletResponse response, @RequestBody Parser parser) {
         Lesson lesson = new Lesson();
         lesson.setTitle(parser.getTitle());
         lesson.setText(parser.convertToJson().toString());

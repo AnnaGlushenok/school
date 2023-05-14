@@ -1,69 +1,46 @@
 package school.services;
 
-import io.jsonwebtoken.Claims;
-import jakarta.security.auth.message.AuthException;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import org.apache.catalina.User;
-import org.springframework.security.core.context.SecurityContextHolder;
+import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import school.model.*;
+import school.model.Roles;
+import school.model.Student;
+import school.model.User;
+import school.model.interfaces.ClassRepository;
 import school.model.interfaces.StudentRepository;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 public class AuthService {
-    private final StudentRepository studentRepository;
-    private final Map<String, String> refreshStorage = new HashMap<>();
-    private final JWTProvider jwtProvider;
+    @Autowired
+    private StudentRepository studentRepository;
+    @Autowired
+    private ClassRepository classRepository;
 
-    public JWTResponse login(@NonNull JWTRequest authRequest) throws AuthException {
-        final Student student = studentRepository.findByLogin(authRequest.getLogin());
-        if (student.getPassword().equals(authRequest.getPassword())) {
-            final String accessToken = jwtProvider.generateAccessToken(student);
-            final String refreshToken = jwtProvider.generateRefreshToken(student);
-            refreshStorage.put(student.getLogin(), refreshToken);
-            return new JWTResponse(accessToken, refreshToken);
+    public AuthService(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
+
+    public List<Student> findAll() {
+        return studentRepository.findAll();
+    }
+
+    public String getRole(User user) {
+        Student student = studentRepository.findByLoginAndPassword(user.getLogin(), user.getPassword());
+        return student == null ? null : student.getRole();
+    }
+
+    public boolean save(Student student) {
+        if (!studentRepository.existsBySurnameAndNameAndPatronymic(student.getSurname(), student.getName(), student.getPatronymic())) {
+            int id = classRepository.findByName(String.valueOf(student.getClassId())).get(0).getId();
+            student.setClassId(id);
+            student.setRole(Roles.STUDENT.name());
+            studentRepository.save(student);
+            return true;
         } else {
-            throw new AuthException("Неправильный пароль");
+            return false;
         }
     }
-
-    public JWTResponse getAccessToken(@NonNull String refreshToken) {
-        if (jwtProvider.validateRefreshToken(refreshToken)) {
-            final Claims claims = jwtProvider.getRefreshClaims(refreshToken);
-            final String login = claims.getSubject();
-            final String saveRefreshToken = refreshStorage.get(login);
-            if (saveRefreshToken != null && saveRefreshToken.equals(refreshToken)) {
-                final Student student = studentRepository.findByLogin(login);
-                final String accessToken = jwtProvider.generateAccessToken(student);
-                return new JWTResponse(accessToken, null);
-            }
-        }
-        return new JWTResponse(null, null);
-    }
-
-    public JWTResponse refresh(@NonNull String refreshToken) throws AuthException {
-        if (jwtProvider.validateRefreshToken(refreshToken)) {
-            final Claims claims = jwtProvider.getRefreshClaims(refreshToken);
-            final String login = claims.getSubject();
-            final String saveRefreshToken = refreshStorage.get(login);
-            if (saveRefreshToken != null && saveRefreshToken.equals(refreshToken)) {
-                final Student student = studentRepository.findByLogin(login);
-                final String accessToken = jwtProvider.generateAccessToken(student);
-                final String newRefreshToken = jwtProvider.generateRefreshToken(student);
-                refreshStorage.put(student.getLogin(), newRefreshToken);
-                return new JWTResponse(accessToken, newRefreshToken);
-            }
-        }
-        throw new AuthException("Невалидный JWT токен");
-    }
-
-    public JWTAuthentication getAuthInfo() {
-        return (JWTAuthentication) SecurityContextHolder.getContext().getAuthentication();
-    }
-
 }

@@ -48,7 +48,7 @@ public class TestController {
                 for (String s : answer)
                     mark += answers.contains(s) ? score : 0;
             } else {
-                mark += answers.get(0).equals(answer[0]) ? 1 : 0;
+                mark += answers.get(0).equals(answer[i]) ? 1 : 0;
             }
         }
         Map<String, String> map = new HashMap<>();
@@ -60,7 +60,7 @@ public class TestController {
     @GetMapping("/getTest")
     @ResponseBody
     public Test getTest() {
-        return testRepository.findById(52);
+        return testRepository.findById(103);
     }
 
     @GetMapping("/testTeacher")

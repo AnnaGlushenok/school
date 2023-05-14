@@ -1,14 +1,11 @@
 package school.model;
 
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import school.controller.TestResult;
 
-import java.util.List;
 import java.util.Set;
 
 @NoArgsConstructor

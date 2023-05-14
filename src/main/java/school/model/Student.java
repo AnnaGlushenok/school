@@ -5,9 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import school.controller.TestResult;
-
-import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
